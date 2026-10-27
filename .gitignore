@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+*.log
+.env
+dist/
+build/
+lighthouse*.json
+CLEANUP_REPORT.md
+*-backup/
+*.report.*
