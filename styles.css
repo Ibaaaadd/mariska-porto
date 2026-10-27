@@ -45,7 +45,7 @@
   --muted:   #55645F;
   --green:   #0F3D3A;
   --green2:  #1D5A55;
-  --brass:   #A8791F;
+  --brass:   #8C5E0D;
   --line:    #D7E0DD;
 
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -959,9 +959,10 @@ img, svg {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
   margin-top: 28px;
+  max-width: 860px;
 }
 
 .contact-card {
@@ -974,6 +975,11 @@ img, svg {
   border-radius: var(--radius-md);
   color: var(--ink);
   transition: all 0.2s ease;
+  min-width: 0;
+}
+
+.contact-card > div:last-child {
+  min-width: 0;
 }
 
 .contact-card:hover {
@@ -1010,6 +1016,8 @@ img, svg {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--green);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ─── SECTION CONTOH HASIL KERJA & SERTIFIKASI (TAHAP 4) ─── */
@@ -1021,41 +1029,6 @@ img, svg {
 #certificates {
   background-color: #FFFFFF;
   border-top: 1px solid var(--line);
-}
-
-/* Filter Bar */
-.filter-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 36px;
-}
-
-.filter-tab {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 18px;
-  background-color: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
-  color: var(--muted);
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.filter-tab:hover {
-  color: var(--green);
-  border-color: var(--green2);
-}
-
-.filter-tab.active {
-  background-color: var(--green);
-  color: #FFFFFF;
-  border-color: var(--green);
-  box-shadow: 0 4px 12px rgba(15, 61, 58, 0.15);
 }
 
 /* ─── BLOK CSS PLACEHOLDER DOKUMEN & SERTIFIKAT ─── */
@@ -1162,11 +1135,6 @@ img, svg {
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.sample-card.is-hidden,
-.cert-card.is-hidden {
-  display: none !important;
 }
 
 .sample-card:hover {
@@ -1323,6 +1291,66 @@ img, svg {
   border-top: 1px solid var(--line);
 }
 
+/* ─── FOOTER & BACK TO TOP ─── */
+footer[role="contentinfo"] {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: -0.01em;
+}
+
+.footer-copy {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background-color: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--green);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  background-color: var(--green);
+  color: #FFFFFF;
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 61, 58, 0.15);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
 /* ─── MOBILE BOTTOM NAV DOCK & FAB ─── */
 .mobile-bottom-nav {
   display: none;
@@ -1458,24 +1486,25 @@ img, svg {
   .section {
     padding: 64px 0;
   }
+  footer[role="contentinfo"] {
+    padding-bottom: 96px;
+  }
 }
 
 @media (max-width: 600px) {
   .logo-last {
     display: none;
   }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
   .skills-grid {
     grid-template-columns: 1fr;
   }
   .certs-grid {
     grid-template-columns: 1fr;
-  }
-  .filter-tabs {
-    gap: 6px;
-  }
-  .filter-tab {
-    padding: 6px 14px;
-    font-size: 0.82rem;
   }
   .skills-tabs {
     gap: 6px;
@@ -1512,6 +1541,23 @@ img, svg {
   }
 }
 
+@media (max-width: 400px) {
+  .mobile-bottom-nav {
+    max-width: calc(100vw - 16px);
+    padding: 5px 6px;
+    gap: 2px;
+  }
+  .mb-nav-item {
+    padding: 5px 6px;
+    min-width: 44px;
+    font-size: 0.68rem;
+  }
+  .mb-nav-item svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 @media (max-width: 360px) {
   .container {
     padding-left: 16px;
@@ -1533,5 +1579,19 @@ img, svg {
   }
   .ledger-desc, .ledger-val {
     font-size: 0.82rem;
+  }
+  .mobile-bottom-nav {
+    max-width: calc(100vw - 12px);
+    padding: 4px 4px;
+    gap: 1px;
+  }
+  .mb-nav-item {
+    padding: 4px 4px;
+    min-width: 40px;
+    font-size: 0.64rem;
+  }
+  .mb-nav-item svg {
+    width: 16px;
+    height: 16px;
   }
 }

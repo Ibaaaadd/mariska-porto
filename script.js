@@ -161,31 +161,3 @@ const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
     }
   });
 })();
-
-
-/* ─── FILTER TABS (HASIL KERJA & SERTIFIKAT) ─── */
-(function initFilterTabs() {
-  const filterContainers = $$('.filter-tabs');
-  filterContainers.forEach(container => {
-    const buttons = $$('.filter-tab', container);
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const group = btn.dataset.filterGroup;
-        const filterVal = btn.dataset.filter;
-        const targetGridId = group === 'samples' ? 'samplesGrid' : 'certsGrid';
-        const grid = document.getElementById(targetGridId);
-        if (!grid) return;
-
-        const cards = $$('.sample-card, .cert-card', grid);
-        cards.forEach(card => {
-          const cat = card.dataset.category;
-          const isShow = filterVal === 'all' || cat === filterVal;
-          card.classList.toggle('is-hidden', !isShow);
-        });
-      });
-    });
-  });
-})();

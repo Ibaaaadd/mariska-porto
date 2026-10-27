@@ -18,7 +18,7 @@
   <link rel="preload" href="fonts/public-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/public-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.min.css" />
 </head>
 
 <body>
@@ -556,25 +556,17 @@
       </div>
     </section>
 
-    <!-- ═══ CONTOH HASIL KERJA (TAHAP 4) ═══ -->
+    <!-- ═══ CONTOH HASIL KERJA (TAHAP 5) ═══ -->
     <section id="projects" class="section" aria-labelledby="projects-title">
       <div class="container">
         <div class="section-label" aria-hidden="true">04 / Hasil Kerja</div>
         <h2 class="section-title" id="projects-title">Contoh Hasil Kerja Administrasi</h2>
         <p class="section-subtitle">Dokumentasi perencanaan anggaran, tata naskah dinas, notulensi rapat, dan verifikasi data.</p>
 
-        <!-- Filter Hasil Kerja -->
-        <div class="filter-tabs" role="group" aria-label="Filter contoh hasil kerja">
-          <button class="filter-tab active" data-filter-group="samples" data-filter="all">Semua</button>
-          <button class="filter-tab" data-filter-group="samples" data-filter="keuangan">Keuangan &amp; Anggaran</button>
-          <button class="filter-tab" data-filter-group="samples" data-filter="administrasi">Persuratan &amp; Notulen</button>
-          <button class="filter-tab" data-filter-group="samples" data-filter="data">Pengolahan Data</button>
-        </div>
-
         <div class="samples-grid" id="samplesGrid">
           
           <!-- Dokumen 1: RAB Seminar -->
-          <article class="sample-card" data-category="keuangan">
+          <article class="sample-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -613,7 +605,7 @@
           </article>
 
           <!-- Dokumen 2: Notulen Rapat -->
-          <article class="sample-card" data-category="administrasi">
+          <article class="sample-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -646,14 +638,14 @@
 
               <div class="sample-footer">
                 <span class="tag">Microsoft Word</span>
-                <!-- DUMMY: Nama Organisasi -->
+                <!-- DUMMY: Nama Organisasi Mahasiswa -->
                 <span class="tag">HMPS IQT</span>
               </div>
             </div>
           </article>
 
           <!-- Dokumen 3: Surat Dinas & Undangan -->
-          <article class="sample-card" data-category="administrasi">
+          <article class="sample-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -689,7 +681,7 @@
           </article>
 
           <!-- Dokumen 4: Rekapitulasi Data Mushaf -->
-          <article class="sample-card" data-category="data">
+          <article class="sample-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -729,25 +721,17 @@
       </div>
     </section>
 
-    <!-- ═══ SERTIFIKASI & PELATIHAN (TAHAP 4) ═══ -->
+    <!-- ═══ SERTIFIKAT DAN PELATIHAN (TAHAP 5) ═══ -->
     <section id="certificates" class="section" aria-labelledby="certificates-title">
       <div class="container">
         <div class="section-label" aria-hidden="true">05 / Sertifikasi</div>
-        <h2 class="section-title" id="certificates-title">Sertifikasi &amp; Pelatihan</h2>
-        <p class="section-subtitle">Bukti keikutsertaan program praktik kerja, pelatihan kompetensi, dan legalitas kepengurusan.</p>
-
-        <!-- Filter Sertifikat -->
-        <div class="filter-tabs" role="group" aria-label="Filter sertifikat dan pelatihan">
-          <button class="filter-tab active" data-filter-group="certs" data-filter="all">Semua</button>
-          <button class="filter-tab" data-filter-group="certs" data-filter="ppl">Praktik Kerja</button>
-          <button class="filter-tab" data-filter-group="certs" data-filter="pelatihan">Pelatihan</button>
-          <button class="filter-tab" data-filter-group="certs" data-filter="organisasi">Organisasi</button>
-        </div>
+        <h2 class="section-title" id="certificates-title">Sertifikat dan pelatihan</h2>
+        <p class="section-subtitle">Dokumentasi keikutsertaan program praktik kerja, pelatihan kompetensi, serta pengalaman kepemimpinan organisasi.</p>
 
         <div class="certs-grid" id="certsGrid">
           
           <!-- Sertifikat 1: PPL LPMQ Jakarta -->
-          <article class="cert-card" data-category="ppl">
+          <article class="cert-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder doc-placeholder-cert" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -763,10 +747,11 @@
             <div class="cert-card-body">
               <div class="cert-meta-row">
                 <span class="cert-category cat-ppl">Praktik Lapangan</span>
-                <!-- DUMMY: Tahun Sertifikat -->
+                <!-- DUMMY: Tahun Sertifikat PPL -->
                 <span class="cert-year">2025</span>
               </div>
               <h3 class="cert-card-title">Sertifikat PPL &mdash; LPMQ Jakarta</h3>
+              <!-- DUMMY: Instansi Penerbit -->
               <div class="cert-issuer">LPMQ Jakarta</div>
               <p class="cert-card-desc">Surat keterangan dan sertifikat penyelesaian Praktik Pengalaman Lapangan dengan predikat sangat memuaskan dalam bidang verifikasi, rasm, dan inventarisasi naskah mushaf Al-Qur'an.</p>
               <div class="cert-footer">
@@ -777,7 +762,7 @@
           </article>
 
           <!-- Sertifikat 2: Pelatihan Aplikasi Perkantoran -->
-          <article class="cert-card" data-category="pelatihan">
+          <article class="cert-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder doc-placeholder-cert" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -793,11 +778,11 @@
             <div class="cert-card-body">
               <div class="cert-meta-row">
                 <span class="cert-category cat-training">Pelatihan Keahlian</span>
-                <!-- DUMMY: Tahun Sertifikat -->
+                <!-- DUMMY: Tahun Sertifikat Pelatihan -->
                 <span class="cert-year">2024</span>
               </div>
               <h3 class="cert-card-title">Pelatihan Aplikasi Perkantoran &amp; Excel</h3>
-              <!-- DUMMY: Penyelenggara Pelatihan -->
+              <!-- DUMMY: Lembaga Penyelenggara Pelatihan -->
               <div class="cert-issuer">Pusat Pengembangan Kompetensi &amp; Karir</div>
               <p class="cert-card-desc">Program pelatihan intensif penggunaan spreadsheet untuk pelaporan keuangan, pemformatan dokumen dinas terstandar, dan tata kelola arsip digital modern.</p>
               <div class="cert-footer">
@@ -807,8 +792,8 @@
             </div>
           </article>
 
-          <!-- Sertifikat 3: SK Pengurus HMPS -->
-          <article class="cert-card" data-category="organisasi">
+          <!-- Sertifikat 3: Kepemimpinan Organisasi -->
+          <article class="cert-card">
             <!-- Blok CSS Placeholder Pengganti Gambar -->
             <div class="doc-placeholder doc-placeholder-cert" aria-hidden="true">
               <div class="doc-icon-wrap">
@@ -819,21 +804,22 @@
                   <line x1="23" y1="11" x2="17" y2="11"/>
                 </svg>
               </div>
-              <span class="doc-file-badge">Surat Keputusan Resmi</span>
-              <span class="doc-file-name">SK_Dekanat_Ketua_HMPS_IQT.pdf</span>
+              <span class="doc-file-badge">Piagam Penghargaan</span>
+              <span class="doc-file-name">Piagam_Kepemimpinan_Organisasi.pdf</span>
             </div>
 
             <div class="cert-card-body">
               <div class="cert-meta-row">
-                <span class="cert-category cat-org">Legalitas Organisasi</span>
-                <!-- DUMMY: Tahun SK -->
+                <span class="cert-category cat-org">Pengalaman Organisasi</span>
+                <!-- DUMMY: Tahun Kepemimpinan Organisasi -->
                 <span class="cert-year">2024 &mdash; 2025</span>
               </div>
-              <h3 class="cert-card-title">Surat Keputusan (SK) Dekanat Pengurus HMPS</h3>
-              <!-- DUMMY: Penerbit SK -->
-              <div class="cert-issuer">Dekanat Fakultas Agama Islam, Universitas Darul 'Ulum</div>
-              <p class="cert-card-desc">Surat Keputusan Dekanat atas pengangkatan resmi dan legalitas amanah kepemimpinan sebagai Ketua Himpunan Mahasiswa Program Studi (HMPS) Ilmu Al-Qur'an dan Tafsir.</p>
+              <h3 class="cert-card-title">Kepemimpinan Organisasi</h3>
+              <!-- DUMMY: Lembaga Penyelenggara/Fakultas -->
+              <div class="cert-issuer">Fakultas Agama Islam, Universitas Darul 'Ulum</div>
+              <p class="cert-card-desc">Penghargaan dan apresiasi atas kontribusi kepemimpinan aktif sebagai ketua organisasi mahasiswa dalam mengoordinasikan kegiatan akademik serta tata kelola administrasi organisasi.</p>
               <div class="cert-footer">
+                <!-- DUMMY: Jabatan Organisasi -->
                 <span class="tag">Ketua HMPS</span>
                 <span class="tag">Kepemimpinan</span>
               </div>
@@ -981,7 +967,7 @@
     </span>
   </button>
 
-  <script defer src="script.js"></script>
+  <script defer src="script.min.js"></script>
 </body>
 
 </html>
