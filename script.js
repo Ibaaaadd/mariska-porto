@@ -161,3 +161,64 @@ const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
     }
   });
 })();
+
+/* ─── LIGHTBOX MODAL SERTIFIKAT ─── */
+(function initCertModal() {
+  const modal = $('#certModal');
+  const modalImg = $('#certModalImg');
+  const modalTitle = $('#certModalTitle');
+  const modalLink = $('#certModalLink');
+  const closeBtn = $('#certModalClose');
+  const backdrop = $('#certModalBackdrop');
+  if (!modal || !modalImg || !closeBtn) return;
+
+  const openModal = (src, title) => {
+    modalImg.src = src;
+    modalImg.alt = title;
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalLink) modalLink.href = src;
+    modal.classList.add('is-active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('is-active');
+    modal.setAttribute('aria-hidden', 'true');
+    modalImg.src = '';
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('.cert-media');
+    if (!trigger) return;
+    const img = trigger.querySelector('.cert-img');
+    const card = trigger.closest('.cert-card');
+    const title = card ? card.querySelector('.cert-card-title')?.textContent : '';
+    if (img && img.src) {
+      openModal(img.src, title || img.alt);
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const activeEl = document.activeElement;
+      if (activeEl && activeEl.classList.contains('cert-media')) {
+        e.preventDefault();
+        const img = activeEl.querySelector('.cert-img');
+        const card = activeEl.closest('.cert-card');
+        const title = card ? card.querySelector('.cert-card-title')?.textContent : '';
+        if (img && img.src) {
+          openModal(img.src, title || img.alt);
+        }
+      }
+    }
+    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+      closeModal();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+})();
+
