@@ -307,6 +307,19 @@ img, svg {
   letter-spacing: 0.5px;
 }
 
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.06);
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -407,144 +420,123 @@ img, svg {
   flex-wrap: wrap;
 }
 
-/* ─── KARTU LEDGER (SATU-SATUNYA ELEMEN MEMORABLE HERO) ─── */
-.ledger-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-ledger);
-  overflow: hidden;
-  max-width: 480px;
+/* ─── HERO PHOTO SECTION ─── */
+.hero-photo-stage {
+  position: relative;
+  max-width: 440px;
   margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.ledger-header {
-  padding: 16px 20px;
-  background: #FAFBFB;
-  border-bottom: 1px solid var(--line);
+.hero-photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 520px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-photo-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: drop-shadow(0 16px 28px rgba(15, 61, 58, 0.12));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 64%, rgba(0, 0, 0, 0) 97%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 64%, rgba(0, 0, 0, 0) 97%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-photo-wrapper:hover .hero-photo-img {
+  transform: scale(1.02);
+  filter: drop-shadow(0 20px 36px rgba(15, 61, 58, 0.16));
+}
+
+/* Gradient fade bawah menyesuaikan warna background hero section (--paper) */
+.hero-photo-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(245, 248, 247, 0) 0%, var(--paper) 98%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating editorial badge di pojok kiri bawah */
+.hero-photo-badge {
+  position: absolute;
+  bottom: 24px;
+  left: -20px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
   gap: 12px;
-}
-
-.ledger-tag {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--brass);
-  margin-bottom: 4px;
-}
-
-.ledger-title {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--green);
-  line-height: 1.3;
-}
-
-.ledger-period {
-  font-size: 0.78rem;
-  color: var(--muted);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 61, 58, 0.12);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  box-shadow: 
+    0 12px 28px -4px rgba(15, 61, 58, 0.12),
+    0 2px 8px rgba(15, 61, 58, 0.04);
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   white-space: nowrap;
-  background: rgba(15, 61, 58, 0.06);
-  padding: 3px 8px;
+}
+
+.hero-photo-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -4px rgba(15, 61, 58, 0.16);
+}
+
+.hero-badge-avatar {
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(15, 61, 58, 0.08);
-}
-
-.ledger-body {
-  padding: 8px 20px;
-}
-
-.ledger-section-title {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  margin-top: 4px;
-  padding-bottom: 2px;
-}
-
-.ledger-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px dashed var(--line);
-  font-size: 0.88rem;
-}
-
-.ledger-subtotal-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 0 8px;
-  border-bottom: 1px solid var(--line);
-  font-size: 0.84rem;
-  font-weight: 600;
+  background: rgba(15, 61, 58, 0.08);
+  border: 1px solid rgba(15, 61, 58, 0.10);
   color: var(--green);
-}
-
-.ledger-row:last-child {
-  border-bottom: none;
-}
-
-.ledger-desc {
-  color: var(--ink);
-  font-weight: 400;
-}
-
-.ledger-val {
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.ledger-in .ledger-val {
-  color: #12664F;
-}
-
-.ledger-out .ledger-val {
-  color: #8C342F;
-}
-
-.ledger-footer {
-  padding: 14px 20px;
-  background: #FAFBFB;
-  border-top: 1.5px solid var(--line);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.88rem;
-}
-
-.ledger-balance-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--green);
-}
-
-.ledger-status-check {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: rgba(15, 61, 58, 0.12);
-  color: var(--green);
-  font-size: 0.75rem;
-  font-weight: bold;
+  flex-shrink: 0;
 }
 
-.ledger-balance-val {
+.hero-badge-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.hero-badge-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--brass);
+  color: var(--green);
+  line-height: 1.25;
+}
+
+.hero-badge-sub {
+  font-size: 0.76rem;
+  color: var(--muted);
+  font-weight: 500;
 }
 
 /* ─── SECTION TENTANG (TAHAP 2) ─── */
@@ -1455,9 +1447,17 @@ footer[role="contentinfo"] {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .ledger-card {
-    margin-left: 0;
-    max-width: 100%;
+  .hero-photo-stage {
+    margin: 20px auto 0;
+  }
+  .hero-photo-wrapper {
+    max-width: 340px;
+    height: 480px;
+  }
+  .hero-photo-badge {
+    position: absolute;
+    bottom: 20px;
+    left: -10px;
   }
   .facts-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1529,6 +1529,17 @@ footer[role="contentinfo"] {
   .hero-title {
     font-size: 2.15rem;
   }
+  .hero-photo-wrapper {
+    max-width: 300px;
+    height: 420px;
+  }
+  .hero-photo-badge {
+    left: 8px;
+    bottom: 12px;
+    max-width: calc(100% - 16px);
+    padding: 8px 12px;
+    white-space: normal;
+  }
   .facts-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -1573,12 +1584,24 @@ footer[role="contentinfo"] {
   .btn {
     width: 100%;
   }
-  .ledger-header, .ledger-body, .ledger-footer {
-    padding-left: 14px;
-    padding-right: 14px;
+  .hero-photo-wrapper {
+    max-width: 270px;
+    height: 370px;
   }
-  .ledger-desc, .ledger-val {
-    font-size: 0.82rem;
+  .hero-photo-badge {
+    left: 6px;
+    bottom: 8px;
+    padding: 6px 10px;
+  }
+  .hero-badge-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .hero-badge-title {
+    font-size: 0.84rem;
+  }
+  .hero-badge-sub {
+    font-size: 0.7rem;
   }
   .mobile-bottom-nav {
     max-width: calc(100vw - 12px);

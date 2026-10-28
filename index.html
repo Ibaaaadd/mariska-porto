@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- DUMMY: Nama & Title -->
-  <title>Mariska Niramala Dewi — Administrasi &amp; Pengelolaan Data</title>
+  <title>Mariska Niramala</title>
   <!-- DUMMY: Meta Description -->
   <meta name="description"
     content="Portofolio Mariska Niramala Dewi — Lulusan S1 Ilmu Al-Qur'an dan Tafsir Universitas Darul 'Ulum. Terbuka untuk peran Administrasi, Keuangan, dan Manajemen Data." />
   <meta property="og:title" content="Mariska Niramala Dewi" />
   <meta property="og:description" content="Portofolio Mariska Niramala Dewi — Terbuka untuk Maganghub Divisi Administrasi." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230F3D3A'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='50' font-weight='bold' fill='%23FFFFFF'>M</text></svg>" />
+  <link rel="icon" href="img/logo/logo.webp" type="image/webp" />
 
   <!-- Self-hosted font preloads -->
   <link rel="preload" href="fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -27,9 +27,9 @@
   <header id="nav" role="banner">
     <div class="nav-inner">
       <!-- DUMMY: Nama & Logo -->
-      <a href="#hero" class="nav-logo" aria-label="Mariska Niramala Dewi — Beranda">
-        <span class="nav-logo-mark" aria-hidden="true">MN</span>
-        <span class="nav-logo-text"><span class="logo-first">Mariska</span><span class="logo-last"> Niramala Dewi</span></span>
+      <a href="#hero" class="nav-logo" aria-label="Mariska Niramala — Beranda">
+        <img src="img/logo/logo.webp" alt="Logo Mariska Niramala" class="nav-logo-img" width="36" height="27" />
+        <span class="nav-logo-text"><span class="logo-first">Mariska</span><span class="logo-last"> Niramala</span></span>
       </a>
 
       <nav class="nav-links" aria-label="Navigasi utama">
@@ -58,11 +58,6 @@
         <div class="hero-grid">
           
           <div class="hero-content">
-            <div class="badge">
-              <span class="badge-dot" aria-hidden="true"></span>
-              <span>Terbuka untuk Maganghub &middot; Divisi Administrasi</span>
-            </div>
-
             <!-- DUMMY: Nama Lengkap -->
             <h1 class="hero-title" id="hero-title">Mariska Niramala Dewi</h1>
 
@@ -77,61 +72,36 @@
             </div>
           </div>
 
-          <!-- Kartu Ledger: Satu-satunya elemen memorable di hero -->
+          <!-- Foto Profil Hero -->
           <div class="hero-visual">
-            <div class="ledger-card" aria-label="Contoh LPJ Kegiatan">
-              <div class="ledger-header">
-                <div class="ledger-header-left">
-                  <span class="ledger-tag">Contoh Dokumen</span>
-                  <!-- DUMMY: Judul LPJ -->
-                  <div class="ledger-title">Ringkasan LPJ Kegiatan Mahasiswa</div>
-                </div>
-                <!-- DUMMY: Periode LPJ -->
-                <span class="ledger-period">T.A. 2025/2026</span>
-              </div>
+            <div class="hero-photo-stage">
+              <div class="hero-photo-wrapper">
+                <img 
+                  src="img/profile/photo.webp" 
+                  alt="Foto Mariska Niramala Dewi" 
+                  class="hero-photo-img"
+                  width="380" 
+                  height="520"
+                  loading="eager"
+                  decoding="async"
+                />
 
-              <div class="ledger-body">
-                <!-- DUMMY: Baris Angka LPJ (Pemasukan) -->
-                <div class="ledger-section-title">Pemasukan</div>
-                <div class="ledger-row ledger-in">
-                  <span class="ledger-desc">Iuran Peserta (50 Orang)</span>
-                  <span class="ledger-val tabular">+ Rp 3.500.000</span>
-                </div>
-                <div class="ledger-row ledger-in">
-                  <span class="ledger-desc">Dana Bantuan Kampus</span>
-                  <span class="ledger-val tabular">+ Rp 2.000.000</span>
-                </div>
-                <div class="ledger-subtotal-row">
-                  <span>Total Pemasukan</span>
-                  <span class="tabular">Rp 5.500.000</span>
-                </div>
+                <!-- Efek Gradasi Halus Menyatu dengan Background Hero -->
+                <div class="hero-photo-fade" aria-hidden="true"></div>
 
-                <!-- DUMMY: Baris Angka LPJ (Pengeluaran) -->
-                <div class="ledger-section-title" style="margin-top: 8px;">Pengeluaran</div>
-                <div class="ledger-row ledger-out">
-                  <span class="ledger-desc">Konsumsi Peserta &amp; Panitia</span>
-                  <span class="ledger-val tabular">- Rp 2.450.000</span>
+                <!-- Floating Editorial Badge -->
+                <div class="hero-photo-badge" aria-label="Profil Singkat">
+                  <div class="hero-badge-avatar" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                  </div>
+                  <div class="hero-badge-info">
+                    <span class="hero-badge-title">S1 Ilmu Al-Qur'an &amp; Tafsir</span>
+                    <span class="hero-badge-sub">Universitas Darul 'Ulum</span>
+                  </div>
                 </div>
-                <div class="ledger-row ledger-out">
-                  <span class="ledger-desc">Perlengkapan &amp; Penggandaan ATK</span>
-                  <span class="ledger-val tabular">- Rp 1.150.000</span>
-                </div>
-                <div class="ledger-row ledger-out">
-                  <span class="ledger-desc">Honorarium Pemateri Seminar</span>
-                  <span class="ledger-val tabular">- Rp 1.900.000</span>
-                </div>
-                <div class="ledger-subtotal-row">
-                  <span>Total Pengeluaran</span>
-                  <span class="tabular">Rp 5.500.000</span>
-                </div>
-              </div>
-
-              <div class="ledger-footer">
-                <div class="ledger-balance-label">
-                  <span class="ledger-status-check" aria-hidden="true">&#10003;</span>
-                  <span>Status Kas: <strong>Nihil (Seimbang)</strong></span>
-                </div>
-                <div class="ledger-balance-val tabular">Selisih: Rp 0</div>
               </div>
             </div>
           </div>
