@@ -1135,6 +1135,80 @@ img, svg {
   box-shadow: 0 10px 28px rgba(15, 61, 58, 0.08);
 }
 
+.sample-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: linear-gradient(135deg, #F0F4F2 0%, #E3ECE8 100%);
+  border: 1px solid var(--line);
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sample-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sample-card:hover .sample-img {
+  transform: scale(1.04);
+}
+
+.sample-badge-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--green);
+  border: 1px solid rgba(15, 61, 58, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sample-view-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(15, 61, 58, 0.88);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sample-view-hint svg {
+  width: 12px;
+  height: 12px;
+}
+
+.sample-card:hover .sample-view-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .sample-card-body {
   padding-top: 18px;
   display: flex;
@@ -1194,10 +1268,51 @@ img, svg {
 .sample-footer {
   margin-top: auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
   padding-top: 14px;
   border-top: 1px solid var(--line);
+}
+
+.sample-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sample-btn-drive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 16px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--green);
+  background-color: rgba(15, 61, 58, 0.05);
+  border: 1px solid rgba(15, 61, 58, 0.16);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sample-btn-drive:hover {
+  background-color: var(--green);
+  color: #FFFFFF;
+  border-color: var(--green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(15, 61, 58, 0.12);
+}
+
+.sample-btn-drive svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.sample-btn-drive:hover svg {
+  transform: translate(2px, -2px);
 }
 
 /* ─── SERTIFIKAT CARDS ─── */
@@ -1235,6 +1350,10 @@ img, svg {
   display: block;
 }
 
+.cert-media-portrait {
+  background: #FFFFFF;
+}
+
 .cert-img {
   width: 100%;
   height: 100%;
@@ -1244,13 +1363,51 @@ img, svg {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cert-card:hover .cert-img {
+.cert-img-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-card:hover .cert-img,
+.cert-card:hover .cert-img-portrait {
   transform: scale(1.04);
+}
+
+.cert-portrait-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--green);
+  border: 1px solid rgba(15, 61, 58, 0.16);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cert-portrait-indicator svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
 }
 
 .cert-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: rgba(15, 61, 58, 0.45);
   display: flex;
   align-items: center;
